@@ -3,12 +3,13 @@
   "repository": "dofaromg/mrlioudb",
   "base_commit": "246018fa66eecce387a766b74e7e039c25db9982",
   "status": "REVIEW_CANDIDATE_NOT_MERGED",
-  "expected_file_count": 16,
+  "expected_file_count": 17,
   "expected_files": [
     ".copilot/Mrliou_structure_authorization.py",
     ".copilot/generator/emoji_indexer.py",
     ".copilot/scanner/structure_scanner.py",
     ".copilot/triggers/smart_updater.py",
+    ".github/workflows/blank.yml",
     ".github/workflows/runner-version-check.yml",
     ".github/workflows/structure-indexer.yml",
     "config/MRL_AUTHORIZATION_REGISTRY_v1.json",
@@ -70,7 +71,11 @@
       "docs/Mrliou_MRL_Legacy_Indexer_Repair_R05.md",
       "config/Mrliou_Structure_Authorization_Delivery_v1.json"
     ],
-    ".github/workflows/runner-version-check.yml": []
+    ".github/workflows/runner-version-check.yml": [],
+    ".github/workflows/blank.yml": [
+      "package.json",
+      "package-lock.json"
+    ]
   },
   "payload": [
     {
@@ -109,11 +114,6 @@
       "sha256": "7b2395fc9d95a0c0615fb93d070873461b1ce27bd32b7ea98b1ba9f61003762e"
     },
     {
-      "path": "docs/Mrliou_MRL_Legacy_Indexer_Repair_R05.md",
-      "size_bytes": 2630,
-      "sha256": "b9ed37999d5bf0c837c96d620456f266c746e0113a3ac9f7c6b76de06d9424e2"
-    },
-    {
       "path": "docs/Mrliou_MRL_Legacy_Indexer_Repair_R05_original/.copilot/generator/emoji_indexer.py",
       "size_bytes": 11755,
       "sha256": "c1365fa9a77b6788bd9f1295e94fa57b2c0965a54151af3ea53026cdcae03a6b"
@@ -147,8 +147,22 @@
       "path": "tests/test_Mrliou_structure_authorization.py",
       "size_bytes": 29242,
       "sha256": "c1670c746171cc4f79be2a3b9d74c0a547b551638f23a37c3d7fef6346af8232"
+    },
+    {
+      "path": ".github/workflows/blank.yml",
+      "size_bytes": 2524,
+      "sha256": "a0ed7293f27c5853e4ea6b6a8e4b890c7cdad438135d2e1dcd5e5de47124b37f"
+    },
+    {
+      "path": "docs/Mrliou_MRL_Legacy_Indexer_Repair_R05.md",
+      "size_bytes": 3001,
+      "sha256": "9e6c22a6c7bed5595d789be2ce68d38d7a4e5267bea7a295996681b39370d63a"
     }
   ],
   "review_branch": "Mrliou/mrl-authorization-repair-r07",
-  "revision": "R07_CI_CORRECTION"
+  "revision": "R08_NODE_DEPENDENCY_SETUP",
+  "external_repository_dependencies": [
+    "package.json",
+    "package-lock.json"
+  ]
 }
