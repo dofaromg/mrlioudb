@@ -1,6 +1,6 @@
 {
   "origin_signature": "MrLiouWord",
-  "updated_at": "2026-07-11T03:25:55.296Z",
+  "updated_at": "2026-09-19T10:50:40.956Z",
   "neural_network": {
     "nodes": [
       {
@@ -10,8 +10,27 @@
         "frequency_hz": 164.88,
         "status": "active",
         "energy": 1
+      },
+      {
+        "id": "Mrliou/mrl-authorization-repair-r07",
+        "type": "experimental",
+        "layer": "L3",
+        "parent": "main",
+        "status": "active",
+        "energy": 0.7,
+        "merged_pr": 1,
+        "created_at": "2026-09-19T08:28:01Z"
       }
     ],
-    "synapses": []
+    "synapses": [
+      {
+        "from": "main",
+        "to": "Mrliou/mrl-authorization-repair-r07",
+        "type": "influence",
+        "weight": 0.5,
+        "pr_number": 1,
+        "timestamp": "2026-09-19T08:28:01Z"
+      }
+    ]
   }
 }
