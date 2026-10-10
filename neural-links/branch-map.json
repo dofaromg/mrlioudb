@@ -1,6 +1,6 @@
 {
   "origin_signature": "MrLiouWord",
-  "updated_at": "2026-09-19T10:50:40.956Z",
+  "updated_at": "2026-10-10T12:33:28.313Z",
   "neural_network": {
     "nodes": [
       {
@@ -16,20 +16,30 @@
         "type": "experimental",
         "layer": "L3",
         "parent": "main",
-        "status": "active",
-        "energy": 0.7,
+        "status": "merged",
+        "energy": 0.95,
         "merged_pr": 1,
-        "created_at": "2026-09-19T08:28:01Z"
+        "created_at": "2026-09-19T08:28:01Z",
+        "merged_at": "2026-10-10T12:33:13Z"
       }
     ],
     "synapses": [
       {
         "from": "main",
         "to": "Mrliou/mrl-authorization-repair-r07",
+        "type": "merge",
+        "weight": 0.95,
+        "pr_number": 1,
+        "timestamp": "2026-10-10T12:33:13Z"
+      },
+      {
+        "from": "main",
+        "to": "Mrliou/mrl-authorization-repair-r07",
         "type": "influence",
         "weight": 0.5,
         "pr_number": 1,
-        "timestamp": "2026-09-19T08:28:01Z"
+        "timestamp": "2026-09-19T08:28:01Z",
+        "historical_only": true
       }
     ]
   }
