@@ -160,8 +160,8 @@
     },
     {
       "path": "tests/test_Mrliou_structure_authorization.py",
-      "size_bytes": 32486,
-      "sha256": "1545c31fa768cd4ebd238b5594b1287552e5205954032f6c7aa0da26eb75b559"
+      "size_bytes": 32498,
+      "sha256": "a906a18073583aa6b8db2df7a700e4a4141e12d316d419c992a12e53a926e6e2"
     },
     {
       "path": ".github/workflows/blank.yml",
@@ -213,6 +213,6 @@
     "extra": [],
     "mismatch": [],
     "coverage_percent": 100,
-    "scope": "expected five-file review candidate; remote CI pending"
+    "scope": "expected five-file repair candidate; existing Neural Branch Sync separately appends two graph files; remote CI pending"
   }
 }
