@@ -160,8 +160,8 @@
     },
     {
       "path": "tests/test_Mrliou_structure_authorization.py",
-      "size_bytes": 32498,
-      "sha256": "a906a18073583aa6b8db2df7a700e4a4141e12d316d419c992a12e53a926e6e2"
+      "size_bytes": 34004,
+      "sha256": "22cac3f813e9ea902a7db5f7b274a07f3491ebdfa2a86e590a75f98e0b249b57"
     },
     {
       "path": ".github/workflows/blank.yml",
@@ -190,8 +190,8 @@
     },
     {
       "path": "docs/Mrliou_Structure_Denial_Reporting_20261011.md",
-      "size_bytes": 2543,
-      "sha256": "c1994a389fa30a7c0e91f41f535048794e3b1942f4c87b0da45dcd94c8ab18e0"
+      "size_bytes": 4197,
+      "sha256": "493987dcfc72fc0ad9bfb37974737295a9dadfd1667500261a0d132290598c24"
     }
   ],
   "review_branch": "Mrliou/structure-denial-reporting-20261011",
@@ -214,5 +214,16 @@
     "mismatch": [],
     "coverage_percent": 100,
     "scope": "expected five-file repair candidate; existing Neural Branch Sync separately appends two graph files; remote CI pending"
+  },
+  "continuation_20261025": {
+    "origin_signature": "MrLiouWord",
+    "canonical_authority": "Mr.liou",
+    "scope": "Existing PR #2 denial reporting; synthetic tests only; no operational authorization",
+    "expected_changed_files": [
+      "tests/test_Mrliou_structure_authorization.py",
+      "docs/Mrliou_Structure_Denial_Reporting_20261011.md",
+      "config/Mrliou_Structure_Authorization_Delivery_v1.json"
+    ],
+    "parent_pr_head": "d906cbb0ed815bb30d2228a54c26a13313a12c22"
   }
 }

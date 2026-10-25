@@ -43,3 +43,32 @@ Remote exact-head CI results must be inspected before claiming validation PASS.
 Expected modification count: 5 (guard, workflow, tests, delivery manifest, this
 document). The existing manifest records actual payload hashes and dependencies;
 its own hash is excluded to avoid circular self-reference.
+
+
+## 2026-10-25 continuation (append-only)
+
+origin_signature: MrLiouWord; canonical_authority: Mr.liou.
+Existing PR #2 is continued; no duplicate PR or operational grant is created.
+The 2026-10-25 main run was inspected: authorization-regression succeeded,
+preflight returned DENY / NO_RECORDED_GRANT with exit 1, and scan, generation,
+and upload were skipped. Main has not yet adopted this reporting change.
+The validated registry still has active_grants=[]; reporting success never
+means Owner authorization or index generation. Only NO_RECORDED_GRANT is an
+expected denial. Malformed, missing, unmatched, expired, revoked, ambiguous,
+and invalid-context grants remain fail-closed; output I/O failure remains a
+program execution failure. New synthetic cases cover expired/revoked grants
+and workflow-output I/O failure without touching the real source tree.
+
+Grant matching requires exactly one active record: issuer MrLiouWord, exact
+actor/triggering actor, environment, repository, root assets, destination,
+ref/event, purpose, requested actions/depth, valid start/expiry, and no
+prohibited requested action. Identity or repository access is not a grant.
+Registry and historical structure artifacts are unchanged.
+
+Sources re-read: repository FlowAgent_ASI_Terminal_v1.md section 8,
+RootLaw_Package_v1.midlock/RootLaws_v1.md Law 30, Execution_Laws.md,
+and the three Notion URLs recorded above. These general governance records
+are not substituted for a scoped operational grant. Synthetic local tests
+must be distinguished from GitHub exact-head CI and production execution.
+
+Source run: https://github.com/dofaromg/mrlioudb/actions/runs/40154082831
