@@ -1,6 +1,6 @@
 {
   "origin_signature": "MrLiouWord",
-  "updated_at": "2026-10-10T12:33:28.313Z",
+  "updated_at": "2026-10-25T15:40:42.459Z",
   "neural_network": {
     "nodes": [
       {
@@ -10,6 +10,16 @@
         "frequency_hz": 164.88,
         "status": "active",
         "energy": 1
+      },
+      {
+        "id": "Mrliou/structure-denial-reporting-20261011",
+        "type": "experimental",
+        "layer": "L3",
+        "parent": "main",
+        "status": "active",
+        "energy": 0.7,
+        "merged_pr": 2,
+        "created_at": "2026-10-11T06:18:01Z"
       },
       {
         "id": "Mrliou/mrl-authorization-repair-r07",
@@ -24,6 +34,14 @@
       }
     ],
     "synapses": [
+      {
+        "from": "main",
+        "to": "Mrliou/structure-denial-reporting-20261011",
+        "type": "influence",
+        "weight": 0.5,
+        "pr_number": 2,
+        "timestamp": "2026-10-11T06:18:01Z"
+      },
       {
         "from": "main",
         "to": "Mrliou/mrl-authorization-repair-r07",
