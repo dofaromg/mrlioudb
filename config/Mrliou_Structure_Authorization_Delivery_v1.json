@@ -3,7 +3,7 @@
   "repository": "dofaromg/mrlioudb",
   "base_commit": "183c08792b6825c4f4b279f300ffa6b3eac7bd7a",
   "status": "REVIEW_CANDIDATE_NOT_MERGED",
-  "expected_file_count": 21,
+  "expected_file_count": 22,
   "expected_files": [
     ".copilot/Mrliou_structure_authorization.py",
     ".copilot/generator/emoji_indexer.py",
@@ -25,7 +25,8 @@
     "scripts/update-neural-map.js",
     "tests/Mrliou_neural_history.test.cjs",
     "tests/test_Mrliou_structure_authorization.py",
-    "docs/Mrliou_Structure_Denial_Reporting_20261011.md"
+    "docs/Mrliou_Structure_Denial_Reporting_20261011.md",
+    ".github/workflows/pr-validation.yml"
   ],
   "dependencies": {
     ".copilot/Mrliou_structure_authorization.py": [
@@ -90,7 +91,8 @@
       "config/MRL_AUTHORIZATION_REGISTRY_v1.json",
       ".copilot/Mrliou_structure_authorization.py",
       ".github/workflows/structure-indexer.yml"
-    ]
+    ],
+    ".github/workflows/pr-validation.yml": []
   },
   "payload": [
     {
@@ -190,8 +192,13 @@
     },
     {
       "path": "docs/Mrliou_Structure_Denial_Reporting_20261011.md",
-      "size_bytes": 4197,
-      "sha256": "493987dcfc72fc0ad9bfb37974737295a9dadfd1667500261a0d132290598c24"
+      "size_bytes": 5387,
+      "sha256": "62a8bf367184b50a4aee58817ae01b0112893e6995abf551e6c94c0c37be7a00"
+    },
+    {
+      "path": ".github/workflows/pr-validation.yml",
+      "size_bytes": 6937,
+      "sha256": "b1c888946377fb08f2d3b4b59cf1e32a937482b2edd2545f29df0e8958ffd47b"
     }
   ],
   "review_branch": "Mrliou/structure-denial-reporting-20261011",
@@ -224,6 +231,12 @@
       "docs/Mrliou_Structure_Denial_Reporting_20261011.md",
       "config/Mrliou_Structure_Authorization_Delivery_v1.json"
     ],
-    "parent_pr_head": "d906cbb0ed815bb30d2228a54c26a13313a12c22"
+    "parent_pr_head": "d906cbb0ed815bb30d2228a54c26a13313a12c22",
+    "integration_parser_repair": {
+      "path": ".github/workflows/pr-validation.yml",
+      "source_run": 40207396659,
+      "failure_job": 121211160499,
+      "scope": "Eagerly parse all YAML documents; no deployment or authorization change"
+    }
   }
 }

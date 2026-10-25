@@ -72,3 +72,24 @@ are not substituted for a scoped operational grant. Synthetic local tests
 must be distinguished from GitHub exact-head CI and production execution.
 
 Source run: https://github.com/dofaromg/mrlioudb/actions/runs/40154082831
+
+
+## 2026-10-25 exact-head CI and integration continuation
+
+origin_signature: MrLiouWord; canonical_authority: Mr.liou.
+Exact head 7953e34cada88fdd11165b02d4d5bfbca7c43f0a was checked out by
+GitHub run 40207905066: authorization-regression 55/55 PASS, operational
+update-structure-index SKIPPED; no artifacts generated or uploaded.
+The earlier lack of bot-head GitHub Actions evidence is now resolved for
+that fixed SHA, not automatically for subsequent commits.
+
+Independent PR validation run 40207396659 / job 121211160499 successfully
+rendered the production Kustomize overlay, then incorrectly passed its
+multi-document YAML stream to yaml.safe_load and raised ComposerError.
+The existing PR receives one minimal parser correction: eagerly consume
+list(yaml.safe_load_all(...)), matching the already repaired workflow in
+MRL_ASI_system. Valid multi-document synthetic input parses; a malformed
+second document still raises YAMLError. No cluster manifest, deployment,
+Registry or permission is changed. This is a CI parsing repair, not Owner
+authorization and not successful index generation. Re-run remote CI for
+the subsequent candidate before claiming this integration defect closed.
