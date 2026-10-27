@@ -84,16 +84,30 @@ jobs:
       - name: Authorize MRL structure scan, generation and artifact destination
         id: authorization
         run: |
-          python .copilot/Mrliou_structure_authorization.py preflight --depth "$MRL_SCAN_DEPTH"
-          echo "allowed=true" >> "$GITHUB_OUTPUT"
+          if authorization_output=$(python .copilot/Mrliou_structure_authorization.py preflight --depth "$MRL_SCAN_DEPTH"); then
+            printf '%s\n' "$authorization_output"
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+          else
+            authorization_status=$?
+            printf '%s\n' "$authorization_output"
+            authorization_reason=$(python -c 'import json,sys; print(json.load(sys.stdin).get("reason", ""))' <<< "$authorization_output")
+            if [ "$authorization_reason" = "NO_RECORDED_GRANT" ]; then
+              echo "No active grant is recorded; skipping the structure-index operation."
+              echo "allowed=false" >> "$GITHUB_OUTPUT"
+            else
+              exit "$authorization_status"
+            fi
+          fi
 
       - name: 📦 Install Dependencies
+        if: steps.authorization.outputs.allowed == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install pyyaml requests
       
       - name: 🔍 Run Structure Scanner
         id: scan
+        if: steps.authorization.outputs.allowed == 'true'
         run: |
           python .copilot/scanner/structure_scanner.py \
             --root . \
@@ -103,6 +117,7 @@ jobs:
       
       - name: 🎨 Generate Emoji Index
         id: index
+        if: steps.authorization.outputs.allowed == 'true'
         run: |
           python .copilot/generator/emoji_indexer.py \
             --input .copilot/structure-scan.json \
@@ -112,6 +127,7 @@ jobs:
       
       - name: 📊 Check for Changes
         id: check_changes
+        if: steps.authorization.outputs.allowed == 'true'
         run: |
           if git diff --quiet HEAD -- STRUCTURE.md .copilot/structure-index.json .copilot/structure.fltnz; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
@@ -122,7 +138,7 @@ jobs:
           fi
       
       - name: 📝 Generate Diff Report
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.authorization.outputs.allowed == 'true' && steps.check_changes.outputs.has_changes == 'true'
         id: diff
         run: |
           echo "## 📊 結構索引變更報告" > diff-report.md
@@ -141,7 +157,7 @@ jobs:
           # Keep the diff local; structure contents are not published to logs.
       
       - name: 📦 Preserve Generated Changes for Review
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.authorization.outputs.allowed == 'true' && steps.check_changes.outputs.has_changes == 'true'
         run: |
           echo "Generated changes await authorization recheck and successful artifact upload."
           echo "Protected main is not mutated directly; apply them through a reviewed PR."

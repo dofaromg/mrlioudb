@@ -513,6 +513,22 @@ class DeliveryContractTests(unittest.TestCase):
 
 
 class WorkflowContractTests(unittest.TestCase):
+    def test_missing_grant_is_a_noop_but_other_authorization_denials_fail(self):
+        source = (SOURCE / '.github/workflows/structure-indexer.yml').read_text()
+        authorization = source.split('id: authorization\n', 1)[1].split(
+            '      - name: 📦 Install Dependencies\n', 1)[0]
+        self.assertIn('authorization_reason', authorization)
+        self.assertIn('"NO_RECORDED_GRANT"', authorization)
+        self.assertIn('echo "allowed=false"', authorization)
+        self.assertIn('echo "allowed=true"', authorization)
+        self.assertIn('exit "$authorization_status"', authorization)
+        for step in ['📦 Install Dependencies', '🔍 Run Structure Scanner',
+                     '🎨 Generate Emoji Index', '📊 Check for Changes']:
+            with self.subTest(step=step):
+                step_block = source.split(f'      - name: {step}\n', 1)[1].split(
+                    '      - name:', 1)[0]
+                self.assertIn("if: steps.authorization.outputs.allowed == 'true'", step_block)
+
     def test_all_artifact_paths_are_exact_and_upload_is_success_gated(self):
         source = (SOURCE / '.github/workflows/structure-indexer.yml').read_text()
         upload = source.split('      - name: 📤 Upload Artifacts\n', 1)[1].split('      - name:', 1)[0]
