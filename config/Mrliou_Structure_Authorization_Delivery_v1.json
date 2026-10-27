@@ -114,8 +114,8 @@
     },
     {
       "path": ".github/workflows/structure-indexer.yml",
-      "size_bytes": 7135,
-      "sha256": "f49beb89ae2faaef7f12e4c0231ccb123eacf1f293fef746adce03f0c6c5eaad"
+      "size_bytes": 8094,
+      "sha256": "4fd88ca6282956141a5c4cd313ac302d6404c57206854c7f47c6370164682fe0"
     },
     {
       "path": "config/MRL_AUTHORIZATION_REGISTRY_v1.json",
@@ -154,8 +154,8 @@
     },
     {
       "path": "tests/test_Mrliou_structure_authorization.py",
-      "size_bytes": 29242,
-      "sha256": "c1670c746171cc4f79be2a3b9d74c0a547b551638f23a37c3d7fef6346af8232"
+      "size_bytes": 30272,
+      "sha256": "38c784a2971866942d2d8093f9a1f34d9fbadc061da1767416e23842d845497b"
     },
     {
       "path": ".github/workflows/blank.yml",
