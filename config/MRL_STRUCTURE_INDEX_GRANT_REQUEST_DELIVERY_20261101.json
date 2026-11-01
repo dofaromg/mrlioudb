@@ -1,0 +1,61 @@
+{
+  "origin_signature": "MrLiouWord",
+  "canonical_authority": "Mr.liou",
+  "repository": "dofaromg/mrlioudb",
+  "parent_sha": "183c08792b6825c4f4b279f300ffa6b3eac7bd7a",
+  "expected_files": [
+    "config/MRL_STRUCTURE_INDEX_GRANT_REQUEST_20261101.json",
+    "docs/mrl-structure-grant-request-20261101.md",
+    "tests/test_MRL_pending_structure_grant.py",
+    ".github/workflows/mrl-pending-structure-grant.yml",
+    "config/MRL_STRUCTURE_INDEX_GRANT_REQUEST_DELIVERY_20261101.json"
+  ],
+  "expected_file_count": 5,
+  "dependencies": {
+    "tests/test_MRL_pending_structure_grant.py": [
+      "config/MRL_STRUCTURE_INDEX_GRANT_REQUEST_20261101.json",
+      ".copilot/Mrliou_structure_authorization.py",
+      "config/MRL_AUTHORIZATION_REGISTRY_v1.json"
+    ],
+    ".github/workflows/mrl-pending-structure-grant.yml": [
+      "tests/test_MRL_pending_structure_grant.py",
+      "tests/test_Mrliou_structure_authorization.py"
+    ],
+    "docs/mrl-structure-grant-request-20261101.md": [
+      "config/MRL_STRUCTURE_INDEX_GRANT_REQUEST_20261101.json"
+    ]
+  },
+  "package_map": "Five Git blobs in repair branch; no ZIP requested",
+  "hash_policy": "Receipt excludes itself to avoid circular hash; Git tree records all five blobs",
+  "payload": [
+    {
+      "path": "config/MRL_STRUCTURE_INDEX_GRANT_REQUEST_20261101.json",
+      "size_bytes": 3327,
+      "sha256": "b192ddfbc2e84f1341e364d450fd36743d2dd5714d18e4caec6b347b309e387b"
+    },
+    {
+      "path": "docs/mrl-structure-grant-request-20261101.md",
+      "size_bytes": 2573,
+      "sha256": "ffa77edfc22e1f43fda826981abec028aae902c8859246a72b78b40b0857990c"
+    },
+    {
+      "path": "tests/test_MRL_pending_structure_grant.py",
+      "size_bytes": 3063,
+      "sha256": "58c110b8ee966db22271ca9a7c457c55a437d26f5cf2558bd9f801272f9344ab"
+    },
+    {
+      "path": ".github/workflows/mrl-pending-structure-grant.yml",
+      "size_bytes": 1149,
+      "sha256": "28bf5bc424c0574d5a38d2f417b844ae5ffd9ea2390abe8c60f26d56ee11a758"
+    }
+  ],
+  "verification": {
+    "local_existing_authorization_tests": 47,
+    "local_pending_tests": 2,
+    "missing": 0,
+    "extra": 0,
+    "mismatch": 0,
+    "proposal_coverage": "100%",
+    "operational_delivery": "BLOCKED_PENDING_ROOT_APPROVAL"
+  }
+}
